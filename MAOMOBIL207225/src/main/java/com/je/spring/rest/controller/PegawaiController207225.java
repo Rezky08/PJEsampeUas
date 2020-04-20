@@ -29,9 +29,9 @@ public class PegawaiController207225 {
         Map<String, Object> respone = new HashMap<String, Object>();
 
         try {
-            List<Pegawai207225> mobilList = pegawaiService207225.getAll();
+            List<Pegawai207225> pegawaiList = pegawaiService207225.getAll();
             long count = pegawaiService207225.count();
-            respone.put(Constants.LIST, mobilList);
+            respone.put(Constants.LIST, pegawaiList);
             respone.put(Constants.TOTAL, count);
 
         } catch (Exception e) {
@@ -90,8 +90,8 @@ public class PegawaiController207225 {
         Pegawai207225 pegawai207225 = new Pegawai207225();
         try {
             pegawai207225.setId207225(id207225);
-            pegawai207225.setNik207225((String) pegawaiMap.get("nama_pegawai207225"));
-            pegawai207225.setNamaPegawai207225((String) pegawaiMap.get("merk207225"));
+            pegawai207225.setNik207225((String) pegawaiMap.get("nik207225"));
+            pegawai207225.setNamaPegawai207225((String) pegawaiMap.get("nama_pegawai207225"));
             pegawai207225.setAlamatPegawai207225((String) pegawaiMap.get("alamat_pegawai207225"));
             pegawai207225.setTelpPegawai207225((String) pegawaiMap.get("telp_pegawai207225"));
             pegawaiService207225.update(pegawai207225);
