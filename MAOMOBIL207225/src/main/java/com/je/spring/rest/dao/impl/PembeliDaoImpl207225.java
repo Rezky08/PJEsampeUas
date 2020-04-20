@@ -17,11 +17,11 @@ import org.springframework.stereotype.Repository;
 @Repository("pembeliDaO207225")
 public class PembeliDaoImpl207225 implements PembeliDao207225 {
 
-    private static final String SQL_SELECT_PEMBELI_BY_ID = "SELECT id207225,nik207225,nama_pembeli207225,alamat_pembeli207225,telp_pembeli207225 FROM PEMBELI207225 WHERE id207225=?";
-    private static final String SQL_SELECT_PEMBELI_ALL = "SELECT id207225,nik207225,nama_pembeli207225,alamat_pembeli207225,telp_pembeli207225 FROM PEMBELI207225";
+    private static final String SQL_SELECT_PEMBELI_BY_ID = "SELECT id207225,nik207225,namaPembeli207225,alamatPembeli207225,telpPembeli207225 FROM PEMBELI207225 WHERE id207225=?";
+    private static final String SQL_SELECT_PEMBELI_ALL = "SELECT id207225,nik207225,namaPembeli207225,alamatPembeli207225,telpPembeli207225 FROM PEMBELI207225";
     private static final String SQL_COUNT_PEMBELI = "SELECT COUNT(*) FROM PEMBELI207225";
-    private static final String SQL_INSERT_PEMBELI = "INSERT INTO PEMBELI207225 (nik207225 ,nama_pembeli207225, alamat_pembeli207225, telp_pembeli207225) VALUES (?,?,?,?) ";
-    private static final String SQL_UPDATE_PEMBELI = "UPDATE PEMBELI207225 SET nik207225=? ,nama_pembeli207225=? ,alamat_pembeli207225=? ,telp_pembeli207225=?  WHERE id207225 =? ";
+    private static final String SQL_INSERT_PEMBELI = "INSERT INTO PEMBELI207225 (nik207225 ,namaPembeli207225, alamatPembeli207225, telpPembeli207225) VALUES (?,?,?,?) ";
+    private static final String SQL_UPDATE_PEMBELI = "UPDATE PEMBELI207225 SET nik207225=? ,namaPembeli207225=? ,alamatPembeli207225=? ,telpPembeli207225=?  WHERE id207225 =? ";
     private static final String SQL_DELETE_PEMBELI = "DELETE FROM PEMBELI207225 WHERE id207225=?";
 
     @Autowired
@@ -48,9 +48,9 @@ public class PembeliDaoImpl207225 implements PembeliDao207225 {
                     Pembeli207225 Pembeli = new Pembeli207225();
                     Pembeli .setId207225(rs.getInt("id207225"));
                     Pembeli .setNik207225(rs.getString("nik207225"));
-                    Pembeli .setNama_pembeli207225(rs.getString("nama_pembeli207225"));
-                    Pembeli .setAlamat_pembeli207225(rs.getString("alamat_pembeli207225"));
-                    Pembeli .setTelp_pembeli207225(rs.getString("telp_pembeli207225"));
+                    Pembeli .setNamaPembeli207225(rs.getString("namaPembeli207225"));
+                    Pembeli .setAlamatPembeli207225(rs.getString("alamatPembeli207225"));
+                    Pembeli .setTelpPembeli207225(rs.getString("telpPembeli207225"));
                     return Pembeli ;
                 }
             });
@@ -63,7 +63,7 @@ public class PembeliDaoImpl207225 implements PembeliDao207225 {
     @Override
     public void insert(Pembeli207225 pembeli207225) {
         try {
-            jdbcTemplate.update(SQL_INSERT_PEMBELI, new Object[]{pembeli207225.getNik207225(), pembeli207225.getNama_pembeli207225(), pembeli207225.getAlamat_pembeli207225(), pembeli207225.getTelp_pembeli207225()});
+            jdbcTemplate.update(SQL_INSERT_PEMBELI, new Object[]{pembeli207225.getNik207225(), pembeli207225.getNamaPembeli207225(), pembeli207225.getAlamatPembeli207225(), pembeli207225.getTelpPembeli207225()});
         } catch (Exception e) {
             e.printStackTrace();
         } 
@@ -72,7 +72,7 @@ public class PembeliDaoImpl207225 implements PembeliDao207225 {
     @Override
     public void update(Pembeli207225 pembeli207225) {
         try {
-            jdbcTemplate.update(SQL_UPDATE_PEMBELI, new Object[]{pembeli207225.getNik207225(), pembeli207225.getNama_pembeli207225(), pembeli207225.getAlamat_pembeli207225(), pembeli207225.getTelp_pembeli207225(), pembeli207225.getId207225()});
+            jdbcTemplate.update(SQL_UPDATE_PEMBELI, new Object[]{pembeli207225.getNik207225(), pembeli207225.getNamaPembeli207225(), pembeli207225.getAlamatPembeli207225(), pembeli207225.getTelpPembeli207225(), pembeli207225.getId207225()});
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -20,8 +20,8 @@ public class PegawaiDaoImpl207225 implements PegawaiDao207225{
     private static final String SQL_SELECT_PEGAWAI_BY_ID = "SELECT * FROM pegawai207225 WHERE id207225=?";
     private static final String SQL_SELECT_PEGAWAI_ALL = "SELECT * FROM pegawai207225";
     private static final String SQL_COUNT_PEGAWAI = "SELECT COUNT(*) FROM pegawai207225";
-    private static final String SQL_INSERT_PEGAWAI = "INSERT INTO pegawai207225 (nik207225, nama_pegawai207225, alamat_pegawai207225, telp_pegawai207225) VALUES (?,?,?,?) ";
-    private static final String SQL_UPDATE_PEGAWAI = "UPDATE pegawai207225 SET nik207225=?, nama_pegawai207225=?, alamat_pegawai207225=?, telp_pegawai207225=?  WHERE id207225 =? ";
+    private static final String SQL_INSERT_PEGAWAI = "INSERT INTO pegawai207225 (nik207225, namaPegawai207225, alamatPegawai207225, telpPegawai207225) VALUES (?,?,?,?) ";
+    private static final String SQL_UPDATE_PEGAWAI = "UPDATE pegawai207225 SET nik207225=?, namaPegawai207225=?, alamatPegawai207225=?, telpPegawai207225=?  WHERE id207225 =? ";
     private static final String SQL_DELETE_PEGAWAI = "DELETE FROM pegawai207225 WHERE id207225=?";
     
     @Autowired
@@ -48,9 +48,9 @@ public class PegawaiDaoImpl207225 implements PegawaiDao207225{
                     Pegawai207225 pegawai = new Pegawai207225();
                     pegawai.setId207225(rs.getInt("id207225"));
                     pegawai.setNik207225(rs.getString("nik207225"));
-                    pegawai.setNamaPegawai207225(rs.getString("nama_pegawai207225"));
-                    pegawai.setAlamatPegawai207225(rs.getString("alamat_pegawai207225"));
-                    pegawai.setTelpPegawai207225(rs.getString("telp_pegawai207225"));
+                    pegawai.setNamaPegawai207225(rs.getString("namaPegawai207225"));
+                    pegawai.setAlamatPegawai207225(rs.getString("alamatPegawai207225"));
+                    pegawai.setTelpPegawai207225(rs.getString("telpPegawai207225"));
                     return pegawai;
                 }
             });
