@@ -5,7 +5,7 @@
 	<artifactId>Spring-REST</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>SistemPenjualan207225</name>
+	<name>MAOMOBIL207225</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
