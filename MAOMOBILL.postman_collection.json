@@ -37,7 +37,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mobil207225\":{\n\t\t\"nama_mobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
+							"raw": "{\n\t\"mobil207225\":{\n\t\t\"namaMobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,7 +68,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mobil207225\":{\n\t\t\"nama_mobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
+							"raw": "{\n\t\"mobil207225\":{\n\t\t\"namaMobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800001\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -76,7 +76,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225/1",
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -87,7 +87,7 @@
 								"service",
 								"master",
 								"mobil207225",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -108,7 +108,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225/1",
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -119,7 +119,253 @@
 								"service",
 								"master",
 								"mobil207225",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "pegawai",
+			"item": [
+				{
+					"name": "GET all data pegawai",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pegawai207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pegawai207225"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT data pegawai",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pegawai207225\":{\n\t\t\"nik207225\" : \"3174102211990008\",\n\t\t\"namaPegawai207225\" : \"Rezky Setiawan\",\n\t\t\"alamatPegawai207225\" : \"Jl.M.Saidi Raya RT 07/06 Petukangan Selatan Jakarta Selatan\",\n\t\t\"telpPegawai207225\": \"089629238997\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pegawai207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pegawai207225"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE data pegawai",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pegawai207225\":{\n\t\t\"nik207225\" : \"3174102211990008\",\n\t\t\"namaPegawai207225\" : \"Rezky Setiawan\",\n\t\t\"alamatPegawai207225\" : \"Jl.M.Saidi Raya RT 07/06 Petukangan Selatan Jakarta Selatan\",\n\t\t\"telpPegawai207225\": \"089629238998\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pegawai207225/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pegawai207225",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE data pegawai",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mobil207225\":{\n\t\t\"nama_mobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pegawai207225/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pegawai207225",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "pembeli",
+			"item": [
+				{
+					"name": "GET all data pembeli",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pembeli207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pembeli207225"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT data pembeli",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pembeli207225\":{\n\t\t\"nik207225\" : \"3174102211990008\",\n\t\t\"namaPembeli207225\" : \"Rezky Setiawan\",\n\t\t\"alamatPembeli207225\" : \"Jl.M.Saidi Raya RT 07/06 Petukangan Selatan Jakarta Selatan\",\n\t\t\"telpPembeli207225\": \"089629238997\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pembeli207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pembeli207225"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE data pembeli",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pembeli207225\":{\n\t\t\"nik207225\" : \"3174102211990008\",\n\t\t\"namaPembeli207225\" : \"Rezky Setiawan\",\n\t\t\"alamatPembeli207225\" : \"Jl.M.Saidi Raya RT 07/06 Petukangan Selatan Jakarta Selatan\",\n\t\t\"telpPembeli207225\": \"089629238998\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pembeli207225/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pembeli207225",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE data pembeli",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mobil207225\":{\n\t\t\"nama_mobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/pembeli207225/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"pembeli207225",
+								"3"
 							]
 						}
 					},
