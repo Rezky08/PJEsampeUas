@@ -66,11 +66,12 @@ public class MobilController2072251 {
         Map<String, Object> mobilMap = (Map<String, Object>) request.get(Constants.MOBIL_KEY);
         Mobil207225 mobil207225 = new Mobil207225();
         try {
+            System.out.println("Harga :"+(String) mobilMap.get("harga207225"));
             mobil207225.setNamaMobil207225((String) mobilMap.get("nama_mobil207225"));
             mobil207225.setMerk207225((String) mobilMap.get("merk207225"));
             mobil207225.setType207225((String) mobilMap.get("type207225"));
             mobil207225.setWarna207225((String) mobilMap.get("warna207225"));
-            mobil207225.setHarga207225((int) mobilMap.get("harga207225"));
+//            mobil207225.setHarga207225(Integer.parseInt((String) mobilMap.get("harga207225")));
             mobilService207225.insert(mobil207225);
             respone.put(Constants.STATUS, Constants.OK);
 
