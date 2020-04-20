@@ -6,9 +6,9 @@ package com.je.spring.rest.model;
 public class Pembeli207225 {
     private int id207225;
     private String nik207225;
-    private String nama_pembeli207225;
-    private String alamat_pembeli207225;
-    private String telp_pembeli207225;
+    private String namaPembeli207225;
+    private String alamatPembeli207225;
+    private String telpPembeli207225;
 
     public int getId207225() {
         return id207225;
@@ -26,29 +26,31 @@ public class Pembeli207225 {
         this.nik207225 = nik207225;
     }
 
-    public String getNama_pembeli207225() {
-        return nama_pembeli207225;
+    public String getNamaPembeli207225() {
+        return namaPembeli207225;
     }
 
-    public void setNama_pembeli207225(String nama_pembeli207225) {
-        this.nama_pembeli207225 = nama_pembeli207225;
+    public void setNamaPembeli207225(String namaPembeli207225) {
+        this.namaPembeli207225 = namaPembeli207225;
     }
 
-    public String getAlamat_pembeli207225() {
-        return alamat_pembeli207225;
+    public String getAlamatPembeli207225() {
+        return alamatPembeli207225;
     }
 
-    public void setAlamat_pembeli207225(String alamat_pembeli207225) {
-        this.alamat_pembeli207225 = alamat_pembeli207225;
+    public void setAlamatPembeli207225(String alamatPembeli207225) {
+        this.alamatPembeli207225 = alamatPembeli207225;
     }
 
-    public String getTelp_pembeli207225() {
-        return telp_pembeli207225;
+    public String getTelpPembeli207225() {
+        return telpPembeli207225;
     }
 
-    public void setTelp_pembeli207225(String telp_pembeli207225) {
-        this.telp_pembeli207225 = telp_pembeli207225;
+    public void setTelpPembeli207225(String telpPembeli207225) {
+        this.telpPembeli207225 = telpPembeli207225;
     }
+
+
     
     
 }
