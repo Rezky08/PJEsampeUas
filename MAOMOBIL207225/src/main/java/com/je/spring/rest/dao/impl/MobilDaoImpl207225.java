@@ -22,8 +22,8 @@ public class MobilDaoImpl207225 implements MobilDao207225 {
     private static final String SQL_SELECT_MOBIL_BY_ID = "SELECT * WHERE id207225=?";
     private static final String SQL_SELECT_MOBIL_ALL = "SELECT * FROM mobil207225";
     private static final String SQL_COUNT_MOBIL = "SELECT COUNT(*) FROM mobil207225";
-    private static final String SQL_INSERT_MOBIL = "INSERT INTO mobil207225 (nama_mobil207225,merk207225,type207225,warna207225,harga207225) VALUES (?,?,?,?,?) ";
-    private static final String SQL_UPDATE_MOBIL = "UPDATE mobil207225 SET nama_mobil207225, merk207225=? ,type207225=? ,warna207225=?, harga207225=?  WHERE id207225 =? ";
+    private static final String SQL_INSERT_MOBIL = "INSERT INTO mobil207225 (nama_mobil207225,merk207225,type207225,warna207225,harga207225) VALUES (?,?,?,?,?)";
+    private static final String SQL_UPDATE_MOBIL = "UPDATE mobil207225 SET nama_mobil207225=?, merk207225=? ,type207225=? ,warna207225=?, harga207225=?  WHERE id207225 =? ";
     private static final String SQL_DELETE_MOBIL = "DELETE FROM mobil207225 WHERE id207225=?";
     
     @Autowired
@@ -78,6 +78,7 @@ public class MobilDaoImpl207225 implements MobilDao207225 {
     @Override
     public void insert(Mobil207225 mobil207225) {
         try {
+            
             jdbcTemplate.update(SQL_INSERT_MOBIL, new Object[]{mobil207225.getNamaMobil207225(), mobil207225.getMerk207225(), mobil207225.getType207225(), mobil207225.getWarna207225(),mobil207225.getHarga207225()});
         } catch (Exception e) {
             e.printStackTrace();

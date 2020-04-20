@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "e466e1a0-9f88-4719-96ee-75b36dcd842b",
+		"name": "MAOMOBILL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mobil",
+			"item": [
+				{
+					"name": "GET all data mobil",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"mobil207225"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT data mobil",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mobil207225\":{\n\t\t\"nama_mobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"mobil207225"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE data mobil",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mobil207225\":{\n\t\t\"nama_mobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"mobil207225",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE data mobil",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mobil207225\":{\n\t\t\"nama_mobil207225\" : \"Terios\",\n\t\t\"merk207225\" : \"Daihatsu\",\n\t\t\"type207225\" : \"SUV\",\n\t\t\"warna207225\": \"Merah\",\n\t\t\"harga207225\" : 206800000\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/master/mobil207225/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"master",
+								"mobil207225",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
