@@ -18,6 +18,6 @@ public class Constants {
 	public static final String OK = "OK";
 	public static final String ERROR = "ERROR";
         
-        public static final String DOSEN_KEY = "dosen207225";
+        public static final String PEMBELI_KEY = "pembeli207225";
 
 }
