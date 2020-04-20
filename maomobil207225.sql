@@ -23,10 +23,11 @@ USE `maomobil207225`;
 DROP TABLE IF EXISTS `beli_cash207225`;
 CREATE TABLE `beli_cash207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_cash207225` varchar(255) DEFAULT NULL,
-  `kode_mobil207225` varchar(255) DEFAULT NULL,
   `cash_tgl207225` datetime DEFAULT NULL,
   `cash_bayar207225` tinyint(3) DEFAULT NULL,
+  `id_pegawai207225` varchar(255) DEFAULT NULL,
+  `id_pembeli207225` varchar(255) DEFAULT NULL,
+  `id_mobil207225` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id207225`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -46,7 +47,6 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `mobil207225`;
 CREATE TABLE `mobil207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_mobil207225` varchar(255) DEFAULT NULL,
   `merk207225` varchar(255) DEFAULT NULL,
   `type207225` varchar(255) DEFAULT NULL,
   `warna207225` varchar(255) DEFAULT NULL,
@@ -70,7 +70,6 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `pegawai207225`;
 CREATE TABLE `pegawai207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_pegawai207225` varchar(255) DEFAULT NULL,
   `nama_pegawai207225` varchar(255) DEFAULT NULL,
   `alamat_pegawai207225` text DEFAULT NULL,
   `telp_pegawai207225` varchar(20) DEFAULT NULL,
@@ -93,7 +92,6 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `pembeli207225`;
 CREATE TABLE `pembeli207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_pembeli207225` varchar(255) DEFAULT NULL,
   `nama_pembeli207225` varchar(255) DEFAULT NULL,
   `alamat_pembeli207225` text DEFAULT NULL,
   `telp_pembeli207225` varchar(20) DEFAULT NULL,
