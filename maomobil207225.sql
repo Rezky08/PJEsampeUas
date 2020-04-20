@@ -23,11 +23,11 @@ USE `maomobil207225`;
 DROP TABLE IF EXISTS `beli_cash207225`;
 CREATE TABLE `beli_cash207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
-  `cash_tgl207225` datetime DEFAULT NULL,
-  `cash_bayar207225` tinyint(3) DEFAULT NULL,
-  `id_pegawai207225` varchar(255) DEFAULT NULL,
-  `id_pembeli207225` varchar(255) DEFAULT NULL,
-  `id_mobil207225` varchar(255) DEFAULT NULL,
+  `cashTgl207225` datetime DEFAULT NULL,
+  `cashBayar207225` tinyint(3) DEFAULT NULL,
+  `idPegawai207225` varchar(255) DEFAULT NULL,
+  `idPembeli207225` varchar(255) DEFAULT NULL,
+  `idMobil207225` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id207225`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -47,13 +47,13 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `mobil207225`;
 CREATE TABLE `mobil207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
-  `nama_mobil207225` varchar(255) DEFAULT NULL,
+  `namaMobil207225` varchar(255) DEFAULT NULL,
   `merk207225` varchar(255) DEFAULT NULL,
   `type207225` varchar(255) DEFAULT NULL,
   `warna207225` varchar(255) DEFAULT NULL,
   `harga207225` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`Id207225`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 #
 # Dumping data for table mobil207225
@@ -61,6 +61,8 @@ CREATE TABLE `mobil207225` (
 
 LOCK TABLES `mobil207225` WRITE;
 /*!40000 ALTER TABLE `mobil207225` DISABLE KEYS */;
+INSERT INTO `mobil207225` VALUES (1,'Terios','Daihatsu','SUV','Merah',206800000);
+INSERT INTO `mobil207225` VALUES (6,'Terios','Daihatsu','SUV','Merah',206800000);
 /*!40000 ALTER TABLE `mobil207225` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -72,11 +74,11 @@ DROP TABLE IF EXISTS `pegawai207225`;
 CREATE TABLE `pegawai207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
   `nik207225` varchar(20) NOT NULL,
-  `nama_pegawai207225` varchar(255) DEFAULT NULL,
-  `alamat_pegawai207225` text DEFAULT NULL,
-  `telp_pegawai207225` varchar(20) DEFAULT NULL,
+  `namaPegawai207225` varchar(255) DEFAULT NULL,
+  `alamatPegawai207225` text DEFAULT NULL,
+  `telpPegawai207225` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`Id207225`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 #
 # Dumping data for table pegawai207225
@@ -84,6 +86,8 @@ CREATE TABLE `pegawai207225` (
 
 LOCK TABLES `pegawai207225` WRITE;
 /*!40000 ALTER TABLE `pegawai207225` DISABLE KEYS */;
+INSERT INTO `pegawai207225` VALUES (1,'3174102211990008','Rezky Setiawan','Jl.M.Saidi Raya RT 07/06 Petukangan Selatan Jakarta Selatan','089629238997');
+INSERT INTO `pegawai207225` VALUES (2,'3174102211990008',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `pegawai207225` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,11 +99,11 @@ DROP TABLE IF EXISTS `pembeli207225`;
 CREATE TABLE `pembeli207225` (
   `Id207225` int(11) NOT NULL AUTO_INCREMENT,
   `nik207225` varchar(20) NOT NULL,
-  `nama_pembeli207225` varchar(255) DEFAULT NULL,
-  `alamat_pembeli207225` text DEFAULT NULL,
-  `telp_pembeli207225` varchar(20) DEFAULT NULL,
+  `namaPembeli207225` varchar(255) DEFAULT NULL,
+  `alamatPembeli207225` text DEFAULT NULL,
+  `telpPembeli207225` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`Id207225`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 #
 # Dumping data for table pembeli207225
@@ -107,6 +111,7 @@ CREATE TABLE `pembeli207225` (
 
 LOCK TABLES `pembeli207225` WRITE;
 /*!40000 ALTER TABLE `pembeli207225` DISABLE KEYS */;
+INSERT INTO `pembeli207225` VALUES (1,'3174102211990008','Rezky Setiawan','Jl.M.Saidi Raya RT 07/06 Petukangan Selatan Jakarta Selatan','089629238997');
 /*!40000 ALTER TABLE `pembeli207225` ENABLE KEYS */;
 UNLOCK TABLES;
 
