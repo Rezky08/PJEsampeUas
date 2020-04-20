@@ -66,7 +66,7 @@ public class MobilController207225 {
         Map<String, Object> mobilMap = (Map<String, Object>) request.get(Constants.MOBIL_KEY);
         Mobil207225 mobil207225 = new Mobil207225();
         try {
-            mobil207225.setNamaMobil207225((String) mobilMap.get("nama_mobil207225"));
+            mobil207225.setNamaMobil207225((String) mobilMap.get("namaMobil207225"));
             mobil207225.setMerk207225((String) mobilMap.get("merk207225"));
             mobil207225.setType207225((String) mobilMap.get("type207225"));
             mobil207225.setWarna207225((String) mobilMap.get("warna207225"));
@@ -92,7 +92,7 @@ public class MobilController207225 {
         Mobil207225 mobil207225 = new Mobil207225();
         try {
             mobil207225.setId207225(id207225);
-            mobil207225.setNamaMobil207225((String) mobilMap.get("nama_mobil207225"));
+            mobil207225.setNamaMobil207225((String) mobilMap.get("namaMobil207225"));
             mobil207225.setMerk207225((String) mobilMap.get("merk207225"));
             mobil207225.setType207225((String) mobilMap.get("type207225"));
             mobil207225.setWarna207225((String) mobilMap.get("warna207225"));
