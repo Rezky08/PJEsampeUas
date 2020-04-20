@@ -22,12 +22,12 @@ USE `maomobil207225`;
 
 DROP TABLE IF EXISTS `beli_cash207225`;
 CREATE TABLE `beli_cash207225` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_cash` varchar(255) DEFAULT NULL,
-  `kode_mobil` varchar(255) DEFAULT NULL,
-  `cash_tgl` datetime DEFAULT NULL,
-  `cash_bayar` tinyint(3) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_cash207225` varchar(255) DEFAULT NULL,
+  `kode_mobil207225` varchar(255) DEFAULT NULL,
+  `cash_tgl207225` datetime DEFAULT NULL,
+  `cash_bayar207225` tinyint(3) DEFAULT NULL,
+  PRIMARY KEY (`Id207225`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 #
@@ -45,13 +45,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mobil207225`;
 CREATE TABLE `mobil207225` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_mobil` varchar(255) DEFAULT NULL,
-  `merk` varchar(255) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `warna` varchar(255) DEFAULT NULL,
-  `harga` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_mobil207225` varchar(255) DEFAULT NULL,
+  `merk207225` varchar(255) DEFAULT NULL,
+  `type207225` varchar(255) DEFAULT NULL,
+  `warna207225` varchar(255) DEFAULT NULL,
+  `harga207225` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`Id207225`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 #
@@ -69,12 +69,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pegawai207225`;
 CREATE TABLE `pegawai207225` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_pegawai` varchar(255) DEFAULT NULL,
-  `nama_pegawai` varchar(255) DEFAULT NULL,
-  `alamat_pegawai` text DEFAULT NULL,
-  `telp_pegawai` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_pegawai207225` varchar(255) DEFAULT NULL,
+  `nama_pegawai207225` varchar(255) DEFAULT NULL,
+  `alamat_pegawai207225` text DEFAULT NULL,
+  `telp_pegawai207225` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`Id207225`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 #
@@ -92,12 +92,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pembeli207225`;
 CREATE TABLE `pembeli207225` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_pembeli` varchar(255) DEFAULT NULL,
-  `nama_pembeli` varchar(255) DEFAULT NULL,
-  `alamat_pembeli` text DEFAULT NULL,
-  `telp_pembeli` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_pembeli207225` varchar(255) DEFAULT NULL,
+  `nama_pembeli207225` varchar(255) DEFAULT NULL,
+  `alamat_pembeli207225` text DEFAULT NULL,
+  `telp_pembeli207225` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`Id207225`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 #
