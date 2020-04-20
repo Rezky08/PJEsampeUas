@@ -1,113 +1,141 @@
-﻿# SQL-Front 5.1  (Build 4.16)
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 20, 2020 at 03:31 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE */;
-/*!40101 SET SQL_MODE='NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES */;
-/*!40103 SET SQL_NOTES='ON' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS */;
-/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-# Host: localhost    Database: maomobil207225
-# ------------------------------------------------------
-# Server version 5.5.5-10.4.11-MariaDB
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-USE `maomobil207225`;
+--
+-- Database: `maomobil207225`
+--
 
-#
-# Source for table beli_cash207225
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `beli_cash207225`;
+--
+-- Table structure for table `beli_cash207225`
+--
+
 CREATE TABLE `beli_cash207225` (
-  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `Id207225` int(11) NOT NULL,
   `cash_tgl207225` datetime DEFAULT NULL,
   `cash_bayar207225` tinyint(3) DEFAULT NULL,
   `id_pegawai207225` varchar(255) DEFAULT NULL,
   `id_pembeli207225` varchar(255) DEFAULT NULL,
-  `id_mobil207225` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Id207225`)
+  `id_mobil207225` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-#
-# Dumping data for table beli_cash207225
-#
+-- --------------------------------------------------------
 
-LOCK TABLES `beli_cash207225` WRITE;
-/*!40000 ALTER TABLE `beli_cash207225` DISABLE KEYS */;
-/*!40000 ALTER TABLE `beli_cash207225` ENABLE KEYS */;
-UNLOCK TABLES;
+--
+-- Table structure for table `mobil207225`
+--
 
-#
-# Source for table mobil207225
-#
-
-DROP TABLE IF EXISTS `mobil207225`;
 CREATE TABLE `mobil207225` (
-  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `Id207225` int(11) NOT NULL,
   `merk207225` varchar(255) DEFAULT NULL,
   `type207225` varchar(255) DEFAULT NULL,
   `warna207225` varchar(255) DEFAULT NULL,
-  `harga207225` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`Id207225`)
+  `harga207225` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-#
-# Dumping data for table mobil207225
-#
+-- --------------------------------------------------------
 
-LOCK TABLES `mobil207225` WRITE;
-/*!40000 ALTER TABLE `mobil207225` DISABLE KEYS */;
-/*!40000 ALTER TABLE `mobil207225` ENABLE KEYS */;
-UNLOCK TABLES;
+--
+-- Table structure for table `pegawai207225`
+--
 
-#
-# Source for table pegawai207225
-#
-
-DROP TABLE IF EXISTS `pegawai207225`;
 CREATE TABLE `pegawai207225` (
-  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `Id207225` int(11) NOT NULL,
+  `nik207225` varchar(20) NOT NULL,
   `nama_pegawai207225` varchar(255) DEFAULT NULL,
   `alamat_pegawai207225` text DEFAULT NULL,
-  `telp_pegawai207225` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`Id207225`)
+  `telp_pegawai207225` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-#
-# Dumping data for table pegawai207225
-#
+-- --------------------------------------------------------
 
-LOCK TABLES `pegawai207225` WRITE;
-/*!40000 ALTER TABLE `pegawai207225` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pegawai207225` ENABLE KEYS */;
-UNLOCK TABLES;
+--
+-- Table structure for table `pembeli207225`
+--
 
-#
-# Source for table pembeli207225
-#
-
-DROP TABLE IF EXISTS `pembeli207225`;
 CREATE TABLE `pembeli207225` (
-  `Id207225` int(11) NOT NULL AUTO_INCREMENT,
+  `Id207225` int(11) NOT NULL,
+  `nik207225` varchar(20) NOT NULL,
   `nama_pembeli207225` varchar(255) DEFAULT NULL,
   `alamat_pembeli207225` text DEFAULT NULL,
-  `telp_pembeli207225` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`Id207225`)
+  `telp_pembeli207225` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-#
-# Dumping data for table pembeli207225
-#
+--
+-- Indexes for dumped tables
+--
 
-LOCK TABLES `pembeli207225` WRITE;
-/*!40000 ALTER TABLE `pembeli207225` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pembeli207225` ENABLE KEYS */;
-UNLOCK TABLES;
+--
+-- Indexes for table `beli_cash207225`
+--
+ALTER TABLE `beli_cash207225`
+  ADD PRIMARY KEY (`Id207225`);
 
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+--
+-- Indexes for table `mobil207225`
+--
+ALTER TABLE `mobil207225`
+  ADD PRIMARY KEY (`Id207225`);
+
+--
+-- Indexes for table `pegawai207225`
+--
+ALTER TABLE `pegawai207225`
+  ADD PRIMARY KEY (`Id207225`);
+
+--
+-- Indexes for table `pembeli207225`
+--
+ALTER TABLE `pembeli207225`
+  ADD PRIMARY KEY (`Id207225`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `beli_cash207225`
+--
+ALTER TABLE `beli_cash207225`
+  MODIFY `Id207225` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `mobil207225`
+--
+ALTER TABLE `mobil207225`
+  MODIFY `Id207225` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pegawai207225`
+--
+ALTER TABLE `pegawai207225`
+  MODIFY `Id207225` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pembeli207225`
+--
+ALTER TABLE `pembeli207225`
+  MODIFY `Id207225` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
