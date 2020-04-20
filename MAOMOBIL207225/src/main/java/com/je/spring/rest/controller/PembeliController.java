@@ -3,8 +3,8 @@
  */
 package com.je.spring.rest.controller;
 
-import com.je.spring.rest.model.Mobil207225;
-import com.je.spring.rest.service.MobilService207225;
+import com.je.spring.rest.model.Pembeli207225;
+import com.je.spring.rest.service.PembeliService207225;
 import com.je.spring.rest.util.Constants;
 import java.util.HashMap;
 import java.util.List;
@@ -18,21 +18,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class MobilController2072251 {
-
+public class PembeliController {
     @Autowired
-    private MobilService207225 mobilService207225;
+    private PembeliService207225 pembeliService207225;
 
-    @RequestMapping(value = "/master/mobil207225", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/master/pembeli207225", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody
     Map<String, Object> getAll() {
 
         Map<String, Object> respone = new HashMap<String, Object>();
 
         try {
-            List<Mobil207225> mobilList = mobilService207225.getAll();
-            long count = mobilService207225.count();
-            respone.put(Constants.LIST, mobilList);
+            List<Pembeli207225> pembeliList = pembeliService207225.getAll();
+            long count = pembeliService207225.count();
+            respone.put(Constants.LIST, pembeliList);
             respone.put(Constants.TOTAL, count);
 
         } catch (Exception e) {
@@ -42,14 +41,14 @@ public class MobilController2072251 {
 
     }
 
-    @RequestMapping(value = "/master/mobil207225/{id207225}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/master/pembeli207225/{id207225}", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody
     Map<String, Object> getById(@PathVariable("id207225") final int id207225) {
         Map<String, Object> respone = new HashMap<String, Object>();
 
         try {
-            Mobil207225 mobil207225 = mobilService207225.getById(id207225);
-            respone.put(Constants.MOBIL_KEY, mobil207225);
+            Pembeli207225 pembeli207225 = pembeliService207225.getById(id207225);
+            respone.put(Constants.PEMBELI_KEY, pembeli207225);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -58,20 +57,19 @@ public class MobilController2072251 {
 
     }
 
-    @RequestMapping(value = "/master/mobil207225", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/master/pembeli207225", method = RequestMethod.POST, produces = "application/json")
     public @ResponseBody
     Map<String, Object> insert(@RequestBody final Map<String, Object> request) {
 
         Map<String, Object> respone = new HashMap<String, Object>();
-        Map<String, Object> mobilMap = (Map<String, Object>) request.get(Constants.MOBIL_KEY);
-        Mobil207225 mobil207225 = new Mobil207225();
+        Map<String, Object> pembeliMap = (Map<String, Object>) request.get(Constants.PEMBELI_KEY);
+        Pembeli207225 pembeli207225 = new Pembeli207225();
         try {
-            mobil207225.setNamaMobil207225((String) mobilMap.get("nama_mobil207225"));
-            mobil207225.setMerk207225((String) mobilMap.get("merk207225"));
-            mobil207225.setType207225((String) mobilMap.get("type207225"));
-            mobil207225.setWarna207225((String) mobilMap.get("warna207225"));
-            mobil207225.setHarga207225((int) mobilMap.get("harga207225"));
-            mobilService207225.insert(mobil207225);
+            pembeli207225.setNik207225((String) pembeliMap.get("nik207225"));
+            pembeli207225.setNama_pembeli207225((String) pembeliMap.get("nama_pembeli207225"));
+            pembeli207225.setAlamat_pembeli207225((String) pembeliMap.get("alamat_pembeli207225"));
+            pembeli207225.setTelp_pembeli207225((String) pembeliMap.get("telp_pembeli207225"));
+            pembeliService207225.insert(pembeli207225);
             respone.put(Constants.STATUS, Constants.OK);
 
         } catch (Exception e) {
@@ -82,22 +80,21 @@ public class MobilController2072251 {
 
     }
 
-    @RequestMapping(value = "/master/mobil207225/{id207225}", method = RequestMethod.PUT, produces = "application/json")
+    @RequestMapping(value = "/master/pembeli207225/{id207225}", method = RequestMethod.PUT, produces = "application/json")
     public @ResponseBody
     Map<String, Object> update(@PathVariable("id207225") final int id207225,
             @RequestBody final Map<String, Object> request) {
 
         Map<String, Object> respone = new HashMap<String, Object>();
-        Map<String, Object> mobilMap = (Map<String, Object>) request.get(Constants.MOBIL_KEY);
-        Mobil207225 mobil207225 = new Mobil207225();
+        Map<String, Object> pembeliMap = (Map<String, Object>) request.get(Constants.PEMBELI_KEY);
+        Pembeli207225 pembeli207225 = new Pembeli207225();
         try {
-            mobil207225.setId207225(id207225);
-            mobil207225.setNamaMobil207225((String) mobilMap.get("nama_mobil207225"));
-            mobil207225.setMerk207225((String) mobilMap.get("merk207225"));
-            mobil207225.setType207225((String) mobilMap.get("type207225"));
-            mobil207225.setWarna207225((String) mobilMap.get("warna207225"));
-            mobil207225.setHarga207225((int) mobilMap.get("harga207225"));
-            mobilService207225.update(mobil207225);
+            pembeli207225.setId207225(id207225);
+              pembeli207225.setNik207225((String) pembeliMap.get("nik207225"));
+            pembeli207225.setNama_pembeli207225((String) pembeliMap.get("nama_pembeli207225"));
+            pembeli207225.setAlamat_pembeli207225((String) pembeliMap.get("alamat_pembeli207225"));
+            pembeli207225.setTelp_pembeli207225((String) pembeliMap.get("telp_pembeli207225"));
+            pembeliService207225.update(pembeli207225);
             respone.put(Constants.STATUS, Constants.OK);
 
         } catch (Exception e) {
@@ -108,15 +105,15 @@ public class MobilController2072251 {
 
     }
 
-    @RequestMapping(value = "/master/mobil207225/{id207225}", method = RequestMethod.DELETE, produces = "application/json")
+    @RequestMapping(value = "/master/pembeli207225/{id207225}", method = RequestMethod.DELETE, produces = "application/json")
     public @ResponseBody
     Map<String, Object> delete(@PathVariable("id207225") final int id207225) {
 
         Map<String, Object> respone = new HashMap<String, Object>();
-        Mobil207225 mobil207225 = new Mobil207225();
+        Pembeli207225 pembeli207225 = new Pembeli207225();
         try {
-            mobil207225.setId207225(id207225);
-            mobilService207225.delete(mobil207225);
+            pembeli207225.setId207225(id207225);
+            pembeliService207225.delete(pembeli207225);
             respone.put(Constants.STATUS, Constants.OK);
 
         } catch (Exception e) {
