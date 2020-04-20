@@ -20,5 +20,6 @@ public class Constants {
         
         public static final String DOSEN_KEY = "dosen207225";
         public static final String MOBIL_KEY = "mobil2072225";
+        public static final String PEGAWAI_KEY = "pegawai207225";
 
 }
