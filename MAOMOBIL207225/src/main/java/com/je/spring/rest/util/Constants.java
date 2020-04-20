@@ -18,6 +18,7 @@ public class Constants {
 	public static final String OK = "OK";
 	public static final String ERROR = "ERROR";
         
-        public static final String MOBIL_KEY = "mobil207225";
+        public static final String MOBIL_KEY = "mobil2072225";
+        public static final String PEGAWAI_KEY = "pegawai207225";
 
 }
