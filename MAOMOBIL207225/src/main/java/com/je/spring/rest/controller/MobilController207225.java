@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class MobilController2072251 {
+public class MobilController207225 {
 
     @Autowired
     private MobilService207225 mobilService207225;
