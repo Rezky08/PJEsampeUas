@@ -66,9 +66,9 @@ public class PegawaiController207225 {
         Pegawai207225 pegawai207225 = new Pegawai207225();
         try {
             pegawai207225.setNik207225((String) pegawaiMap.get("nik207225"));
-            pegawai207225.setNamaPegawai207225((String) pegawaiMap.get("nama_pegawai207225"));
-            pegawai207225.setAlamatPegawai207225((String) pegawaiMap.get("alamat_pegawai207225"));
-            pegawai207225.setTelpPegawai207225((String) pegawaiMap.get("telp_pegawai207225"));
+            pegawai207225.setNamaPegawai207225((String) pegawaiMap.get("namaPegawai207225"));
+            pegawai207225.setAlamatPegawai207225((String) pegawaiMap.get("alamatPegawai207225"));
+            pegawai207225.setTelpPegawai207225((String) pegawaiMap.get("telpPegawai207225"));
             pegawaiService207225.insert(pegawai207225);
             respone.put(Constants.STATUS, Constants.OK);
 
@@ -91,9 +91,9 @@ public class PegawaiController207225 {
         try {
             pegawai207225.setId207225(id207225);
             pegawai207225.setNik207225((String) pegawaiMap.get("nik207225"));
-            pegawai207225.setNamaPegawai207225((String) pegawaiMap.get("nama_pegawai207225"));
-            pegawai207225.setAlamatPegawai207225((String) pegawaiMap.get("alamat_pegawai207225"));
-            pegawai207225.setTelpPegawai207225((String) pegawaiMap.get("telp_pegawai207225"));
+            pegawai207225.setNamaPegawai207225((String) pegawaiMap.get("namaPegawai207225"));
+            pegawai207225.setAlamatPegawai207225((String) pegawaiMap.get("alamatPegawai207225"));
+            pegawai207225.setTelpPegawai207225((String) pegawaiMap.get("telpPegawai207225"));
             pegawaiService207225.update(pegawai207225);
             respone.put(Constants.STATUS, Constants.OK);
 
