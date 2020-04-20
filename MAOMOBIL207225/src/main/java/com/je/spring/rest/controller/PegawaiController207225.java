@@ -80,6 +80,37 @@ public class PegawaiController207225 {
 
     }
 
+//    @RequestMapping(value = "/master/pegawai207225/{id207225}", method = RequestMethod.PUT, produces = "application/json")
+//    public @ResponseBody
+//    Map<String, Object> update(@PathVariable("id207225") final int id207225,
+//            @RequestBody final Map<String, Object> request) {
+//
+//        Map<String, Object> respone = new HashMap<String, Object>();
+//        Map<String, Object> pegawaiMap = (Map<String, Object>) request.get(Constants.PEGAWAI_KEY);
+//        Pegawai207225 pegawai207225 = new Pegawai207225();
+//        System.out.println("yohoooo" + id207225);
+//        
+//        try {
+//            System.out.println("mashookk");
+//            pegawai207225.setId207225(id207225);
+//            pegawai207225.setNik207225((String) pegawaiMap.get("nik207225"));
+//            pegawai207225.setNamaPegawai207225((String) pegawaiMap.get("namaPegawai207225"));
+//            pegawai207225.setAlamatPegawai207225((String) pegawaiMap.get("alamatPegawai207225"));
+//            pegawai207225.setTelpPegawai207225((String) pegawaiMap.get("telpPegawai207225"));
+//            System.out.println("isi " + pegawai207225);
+//            pegawaiService207225.update(pegawai207225);
+//            System.out.println("tembus");
+//            respone.put(Constants.STATUS, Constants.OK);
+//
+//        } catch (Exception e) {
+//            respone.put(Constants.STATUS, Constants.ERROR);
+//            e.printStackTrace();
+//        }
+//        return respone;
+//
+//    }
+    
+    
     @RequestMapping(value = "/master/pegawai207225/{id207225}", method = RequestMethod.PUT, produces = "application/json")
     public @ResponseBody
     Map<String, Object> update(@PathVariable("id207225") final int id207225,
@@ -104,6 +135,7 @@ public class PegawaiController207225 {
         return respone;
 
     }
+    
 
     @RequestMapping(value = "/master/pegawai207225/{id207225}", method = RequestMethod.DELETE, produces = "application/json")
     public @ResponseBody

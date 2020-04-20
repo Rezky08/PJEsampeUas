@@ -21,7 +21,7 @@ public class PegawaiDaoImpl207225 implements PegawaiDao207225{
     private static final String SQL_SELECT_PEGAWAI_ALL = "SELECT * FROM pegawai207225";
     private static final String SQL_COUNT_PEGAWAI = "SELECT COUNT(*) FROM pegawai207225";
     private static final String SQL_INSERT_PEGAWAI = "INSERT INTO pegawai207225 (nik207225, namaPegawai207225, alamatPegawai207225, telpPegawai207225) VALUES (?,?,?,?) ";
-    private static final String SQL_UPDATE_PEGAWAI = "UPDATE pegawai207225 SET nik207225=?, namaPegawai207225=?, alamatPegawai207225=?, telpPegawai207225=?  WHERE id207225 =? ";
+    private static final String SQL_UPDATE_PEGAWAI = "UPDATE pegawai207225 SET nik207225=? ,namaPegawai207225=? ,alamatPegawai207225=? ,telpPegawai207225=?  WHERE id207225 = ? ";
     private static final String SQL_DELETE_PEGAWAI = "DELETE FROM pegawai207225 WHERE id207225=?";
     
     @Autowired
@@ -84,7 +84,7 @@ public class PegawaiDaoImpl207225 implements PegawaiDao207225{
     @Override
     public void update(Pegawai207225 pegawai207225) {
         try {
-            jdbcTemplate.update(SQL_UPDATE_PEGAWAI, new Object[]{pegawai207225.getNik207225(), pegawai207225.getNamaPegawai207225(), pegawai207225.getAlamatPegawai207225(), pegawai207225.getTelpPegawai207225()});
+            jdbcTemplate.update(SQL_UPDATE_PEGAWAI, new Object[]{pegawai207225.getNik207225(), pegawai207225.getNamaPegawai207225(), pegawai207225.getAlamatPegawai207225(), pegawai207225.getTelpPegawai207225(), pegawai207225.getId207225()});
         } catch (Exception e) {
             e.printStackTrace();
         }
