@@ -21,5 +21,6 @@ public class Constants {
         public static final String PEMBELI_KEY = "pembeli207225";
         public static final String MOBIL_KEY = "mobil207225";
         public static final String PEGAWAI_KEY = "pegawai207225";
+        public static final String BELICASH_KEY = "beli_cash207225";
 
 }
