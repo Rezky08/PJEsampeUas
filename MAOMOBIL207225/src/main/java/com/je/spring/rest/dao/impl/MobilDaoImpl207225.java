@@ -42,25 +42,25 @@ public class MobilDaoImpl207225 implements MobilDao207225 {
 
     @Override
     public Mobil207225 getById(int id207225) {
-        Mobil207225 mobil = null;
+        Mobil207225 mobil207225 = null;
         try {
-            mobil = (Mobil207225) jdbcTemplate.queryForObject(SQL_SELECT_MOBIL_BY_ID, new Object[]{id207225}, new RowMapper<Mobil207225>() {
+            mobil207225 = (Mobil207225) jdbcTemplate.queryForObject(SQL_SELECT_MOBIL_BY_ID, new Object[]{id207225}, new RowMapper<Mobil207225>() {
 
                 public Mobil207225 mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    Mobil207225 mobil = new Mobil207225();
-                    mobil.setId207225(rs.getInt("id207225"));
-                    mobil.setNamaMobil207225(rs.getString("nama_mobil207225"));
-                    mobil.setMerk207225(rs.getString("merk207225"));
-                    mobil.setType207225(rs.getString("type207225"));
-                    mobil.setWarna207225(rs.getString("warna207225"));
-                    mobil.setHarga207225(rs.getInt("harga207225"));
-                    return mobil;
+                    Mobil207225 mobil207225 = new Mobil207225();
+                    mobil207225.setId207225(rs.getInt("id207225"));
+                    mobil207225.setNamaMobil207225(rs.getString("namaMobil207225"));
+                    mobil207225.setMerk207225(rs.getString("merk207225"));
+                    mobil207225.setType207225(rs.getString("type207225"));
+                    mobil207225.setWarna207225(rs.getString("warna207225"));
+                    mobil207225.setHarga207225(rs.getInt("harga207225"));
+                    return mobil207225;
                 }
             });
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return mobil;
+        return mobil207225;
     }
 
     @Override

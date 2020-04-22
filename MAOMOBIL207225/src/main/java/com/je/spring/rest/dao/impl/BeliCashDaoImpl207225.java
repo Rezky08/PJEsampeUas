@@ -20,16 +20,22 @@ import org.springframework.stereotype.Repository;
 @Repository("belicashDao")
 public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
 
-    private static final String SQL_SELECT_BELICASH_BY_ID = "SELECT * FROM beli_cash207225 INNER JOIN pegawai207225 "
-            + "ON pegawai207225.id207225 = beli_cash207225.idPegawai207225"
-            + "INNER JOIN pembeli207225 ON pembeli207225.id207225 = beli_cash207225.idPembeli207225"
-            + "INNER JOIN mobil207225 ON mobil207225.id207225 = beli_cash207225.idMobil207225"
+    private static final String SQL_SELECT_BELICASH_BY_ID = "SELECT beli_cash207225.*, "
+            + "pegawai207225.id207225 as id_pegawai207225,pembeli207225.id207225 as id_pembeli207225,mobil207225.id207225 as id_mobil207225,"
+            + "pegawai207225.*,pembeli207225.*,mobil207225.* "
+            + "FROM beli_cash207225 LEFT JOIN pegawai207225 "
+            + "ON pegawai207225.id207225 = beli_cash207225.idPegawai207225 "
+            + "LEFT JOIN pembeli207225 ON pembeli207225.id207225 = beli_cash207225.idPembeli207225 "
+            + "LEFT JOIN mobil207225 ON mobil207225.id207225 = beli_cash207225.idMobil207225 "
             + "WHERE beli_cash207225.id207225 =?";
-    private static final String SQL_SELECT_BELICASH_ALL = "SELECT * FROM beli_cash207225 INNER JOIN pegawai207225 "
-            + "ON pegawai207225.id207225 = beli_cash207225.idPegawai207225"
-            + "INNER JOIN pembeli207225 ON pembeli207225.id207225 = beli_cash207225.idPembeli207225"
-            + "INNER JOIN mobil207225 ON mobil207225.id207225 = beli_cash207225.idMobil207225";
-
+    private static final String SQL_SELECT_BELICASH_ALL = "SELECT beli_cash207225.*, "
+            + "pegawai207225.id207225 as id_pegawai207225,pembeli207225.id207225 as id_pembeli207225,mobil207225.id207225 as id_mobil207225,"
+            + "pegawai207225.nik207225 as nik_pegawai207225,pembeli207225.nik207225 as nik_pegawai207225,"
+            + "pegawai207225.*,pembeli207225.*,mobil207225.* "
+            + "FROM beli_cash207225 LEFT JOIN pegawai207225 "
+            + "ON pegawai207225.id207225 = beli_cash207225.idPegawai207225 "
+            + "LEFT JOIN pembeli207225 ON pembeli207225.id207225 = beli_cash207225.idPembeli207225 "
+            + "LEFT JOIN mobil207225 ON mobil207225.id207225 = beli_cash207225.idMobil207225";
     private static final String SQL_COUNT_BELICASH = "SELECT COUNT(*) FROM beli_cash207225";
     private static final String SQL_INSERT_BELICASH = "INSERT INTO beli_cash207225 (cashTgl207225, cashBayar207225, idPegawai207225, idPembeli207225, idMobil207225) VALUES (?,?,?,?,?) ";
 
@@ -47,25 +53,25 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
                     Pembeli207225 Pembeli = new Pembeli207225();
                     Mobil207225 mobil = new Mobil207225();
                     beliCash207225.setId207225(rs.getInt("id207225"));
-                    beliCash207225.setCashTgl207225(null);//kaga tau gmn penuisannya tanggal
-                    beliCash207225.setCashBayar2072225(rs.getString("cashBayar207225"));
+                    beliCash207225.setCashTgl207225(rs.getString("cashTgl207225"));
+                    beliCash207225.setCashBayar2072225(rs.getInt("cashBayar207225"));
 
-                    pegawai.setId207225(rs.getInt("id207225"));
-                    pegawai.setNik207225(rs.getString("nik207225"));
+                    pegawai.setId207225(rs.getInt("id_pegawai207225"));
+                    pegawai.setNik207225(rs.getString("nik_pegawai207225"));
                     pegawai.setNamaPegawai207225(rs.getString("namaPegawai207225"));
                     pegawai.setAlamatPegawai207225(rs.getString("alamatPegawai207225"));
                     pegawai.setTelpPegawai207225(rs.getString("telpPegawai207225"));
                     beliCash207225.setPegawai207225(pegawai);
 
-                    Pembeli.setId207225(rs.getInt("id207225"));
-                    Pembeli.setNik207225(rs.getString("nik207225"));
+                    Pembeli.setId207225(rs.getInt("id_pembeli207225"));
+                    Pembeli.setNik207225(rs.getString("nik_pembeli207225"));
                     Pembeli.setNamaPembeli207225(rs.getString("namaPembeli207225"));
                     Pembeli.setAlamatPembeli207225(rs.getString("alamatPembeli207225"));
                     Pembeli.setTelpPembeli207225(rs.getString("telpPembeli207225"));
                     beliCash207225.setPembeli207225(Pembeli);
                     
-                    mobil.setId207225(rs.getInt("id207225"));
-                    mobil.setNamaMobil207225(rs.getString("nama_mobil207225"));
+                    mobil.setId207225(rs.getInt("id_mobil207225"));
+                    mobil.setNamaMobil207225(rs.getString("namaMobil207225"));
                     mobil.setMerk207225(rs.getString("merk207225"));
                     mobil.setType207225(rs.getString("type207225"));
                     mobil.setWarna207225(rs.getString("warna207225"));
@@ -86,32 +92,32 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
     public BeliCash207225 getById(int id207225) {
         BeliCash207225 beliCash207225 = null;
         try {
-            beliCash207225 = (BeliCash207225) jdbcTemplate.query(SQL_SELECT_BELICASH_BY_ID, new Object[]{id207225}, new RowMapper<BeliCash207225>() {
+            beliCash207225 = (BeliCash207225) jdbcTemplate.queryForObject(SQL_SELECT_BELICASH_BY_ID, new Object[]{id207225}, new RowMapper<BeliCash207225>() {
                 public BeliCash207225 mapRow(ResultSet rs, int rowNum) throws SQLException {
                     BeliCash207225 beliCash207225 = new BeliCash207225();
                     Pegawai207225 pegawai = new Pegawai207225();
                     Pembeli207225 Pembeli = new Pembeli207225();
                     Mobil207225 mobil = new Mobil207225();
                     beliCash207225.setId207225(rs.getInt("id207225"));
-                    beliCash207225.setCashTgl207225(null);//kaga tau gmn penuisannya tanggal
-                    beliCash207225.setCashBayar2072225(rs.getString("cashBayar207225"));
+                    beliCash207225.setCashTgl207225(rs.getString("cashTgl207225"));
+                    beliCash207225.setCashBayar2072225(rs.getInt("cashBayar207225"));
 
-                    pegawai.setId207225(rs.getInt("id207225"));
-                    pegawai.setNik207225(rs.getString("nik207225"));
+                    pegawai.setId207225(rs.getInt("id_pegawai207225"));
+                    pegawai.setNik207225(rs.getString("nik_pegawai207225"));
                     pegawai.setNamaPegawai207225(rs.getString("namaPegawai207225"));
                     pegawai.setAlamatPegawai207225(rs.getString("alamatPegawai207225"));
                     pegawai.setTelpPegawai207225(rs.getString("telpPegawai207225"));
                     beliCash207225.setPegawai207225(pegawai);
 
-                    Pembeli.setId207225(rs.getInt("id207225"));
-                    Pembeli.setNik207225(rs.getString("nik207225"));
+                    Pembeli.setId207225(rs.getInt("id_pembeli207225"));
+                    Pembeli.setNik207225(rs.getString("nik_pembeli207225"));
                     Pembeli.setNamaPembeli207225(rs.getString("namaPembeli207225"));
                     Pembeli.setAlamatPembeli207225(rs.getString("alamatPembeli207225"));
                     Pembeli.setTelpPembeli207225(rs.getString("telpPembeli207225"));
                     beliCash207225.setPembeli207225(Pembeli);
                     
-                    mobil.setId207225(rs.getInt("id207225"));
-                    mobil.setNamaMobil207225(rs.getString("nama_mobil207225"));
+                    mobil.setId207225(rs.getInt("id_mobil207225"));
+                    mobil.setNamaMobil207225(rs.getString("namaMobil207225"));
                     mobil.setMerk207225(rs.getString("merk207225"));
                     mobil.setType207225(rs.getString("type207225"));
                     mobil.setWarna207225(rs.getString("warna207225"));

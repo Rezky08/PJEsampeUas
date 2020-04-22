@@ -5,11 +5,17 @@ package com.je.spring.rest.controller;
 
 import com.google.gson.Gson;
 import com.je.spring.rest.model.BeliCash207225;
+import com.je.spring.rest.model.Mobil207225;
+import com.je.spring.rest.model.Pegawai207225;
+import com.je.spring.rest.model.Pembeli207225;
 import com.je.spring.rest.service.BeliCashService207225;
 import com.je.spring.rest.service.MobilService207225;
 import com.je.spring.rest.service.PegawaiService207225;
 import com.je.spring.rest.service.PembeliService207225;
 import com.je.spring.rest.util.Constants;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,7 +52,7 @@ public class BeliCashController207225 {
 
         try {
             List<BeliCash207225> belicashList = beliCashService207225.getAll();
-            long count = mobilService207225.count();
+            long count = beliCashService207225.count();
             respone.put(Constants.LIST, belicashList);
             respone.put(Constants.TOTAL, count);
 
@@ -80,28 +86,41 @@ public class BeliCashController207225 {
 
         Map<String, Object> respone = new HashMap<String, Object>();
         Map<String, Object> belicashMap = (Map<String, Object>) request.get(Constants.BELICASH_KEY);
-        BeliCash207225 beliCash1207225 = new BeliCash207225();
+        BeliCash207225 beliCash207225 = new BeliCash207225();
+        Pegawai207225 pegawai207225 = new Pegawai207225();
+        Pembeli207225 pembeli207225 = new Pembeli207225();
+        Mobil207225 mobil207225 = new Mobil207225();
         try {
-            //beliCash1207225.setCashTgl207225((String) belicashMap.get("cashTgl207225")); gw gatau penulisannya
-            beliCash1207225.setCashBayar2072225((String) belicashMap.get("cashBayar207225")); 
-            
-            BeliCash207225 beliCash207225 = gson.fromJson(belicashMap.toString(), BeliCash207225.class);
-            Integer pegawaiId = beliCash207225.getPegawai207225().getId207225();
-            if(pegawaiService207225.getById(pegawaiId)==null){
+            // Auto Generate Date            
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
+            //            
+            beliCash207225.setCashTgl207225(dateFormat.format(date));
+            beliCash207225.setCashBayar2072225((int) belicashMap.get("cashBayar207225"));
+            pegawai207225.setId207225((int) belicashMap.get("idPegawai207225"));
+            pembeli207225.setId207225((int) belicashMap.get("idPembeli207225"));
+            mobil207225.setId207225((int) belicashMap.get("idMobil207225"));
+            beliCash207225.setPegawai207225(pegawai207225);
+            beliCash207225.setMobil207225(mobil207225);
+            beliCash207225.setPembeli207225(pembeli207225);
+
+//            BeliCash207225 beliCash207225 = gson.fromJson(belicashMap.toString(), BeliCash207225.class);
+            int pegawaiId = beliCash207225.getPegawai207225().getId207225();
+            if (pegawaiService207225.getById(pegawaiId) == null) {
                 respone.put(Constants.STATUS, "Pegawai Id not Found");
                 return respone;
             }
-             Integer pembeliId = beliCash207225.getPembeli207225().getId207225();
-            if(pembeliService207225.getById(pembeliId)==null){
+            int pembeliId = beliCash207225.getPembeli207225().getId207225();
+            if (pembeliService207225.getById(pembeliId) == null) {
                 respone.put(Constants.STATUS, "Pembeli Id not Found");
                 return respone;
             }
-             Integer mobilId = beliCash207225.getMobil207225().getId207225();
-            if(mobilService207225.getById(mobilId)==null){
+            int mobilId = beliCash207225.getMobil207225().getId207225();
+            if (mobilService207225.getById(mobilId) == null) {
                 respone.put(Constants.STATUS, "Mobil Id not Found");
                 return respone;
             }
-            
+
             beliCashService207225.insert(beliCash207225);
             respone.put(Constants.STATUS, Constants.OK);
 

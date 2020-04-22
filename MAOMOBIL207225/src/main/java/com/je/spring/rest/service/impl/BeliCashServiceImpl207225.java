@@ -27,7 +27,7 @@ public class BeliCashServiceImpl207225 implements BeliCashService207225{
     @Override
     public BeliCash207225 getById(int id207225) {
         BeliCash207225 beliCash207225 = new BeliCash207225();
-        beliCash207225  = BeliCashDao207225 .getById(id207225);
+        beliCash207225  = BeliCashDao207225.getById(id207225);
         return beliCash207225 ;
     }
 

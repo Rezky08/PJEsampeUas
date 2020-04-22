@@ -7,8 +7,8 @@ import java.util.Date;
 
 public class BeliCash207225 {
     private int id207225;
-    private Date cashTgl207225;
-    private String cashBayar2072225;
+    private String cashTgl207225;
+    private int cashBayar2072225;
     private Mobil207225 mobil207225;
     private Pegawai207225 pegawai207225;
     private Pembeli207225 pembeli207225;
@@ -21,23 +21,23 @@ public class BeliCash207225 {
         this.id207225 = id207225;
     }
 
-    public Date getCashTgl207225() {
+    public String getCashTgl207225() {
         return cashTgl207225;
     }
 
-    public void setCashTgl207225(Date cashTgl207225) {
+    public void setCashTgl207225(String cashTgl207225) {
         this.cashTgl207225 = cashTgl207225;
     }
-
     
-
-    public String getCashBayar2072225() {
+    public int getCashBayar2072225() {
         return cashBayar2072225;
     }
 
-    public void setCashBayar2072225(String cashBayar2072225) {
+    public void setCashBayar2072225(int cashBayar2072225) {
         this.cashBayar2072225 = cashBayar2072225;
     }
+
+    
 
     public Mobil207225 getMobil207225() {
         return mobil207225;
