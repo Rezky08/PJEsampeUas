@@ -373,6 +373,65 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "belicash",
+			"item": [
+				{
+					"name": "GET all data belicash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/transaksi/belicash207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"transaksi",
+								"belicash207225"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT data belicash",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"beliCash207225\":{\n\t\t\"cashBayar207225\" : 20000,\n\t\t\"idPembeli207225\" : 1,\n\t\t\"idPegawai207225\" : 1,\n\t\t\"idMobil207225\" : 6\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/MaoMobil207225/service/transaksi/belicash207225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"MaoMobil207225",
+								"service",
+								"transaksi",
+								"belicash207225"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
