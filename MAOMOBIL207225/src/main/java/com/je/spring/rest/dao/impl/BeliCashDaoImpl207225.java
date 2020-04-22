@@ -10,7 +10,13 @@ import com.je.spring.rest.model.Pegawai207225;
 import com.je.spring.rest.model.Pembeli207225;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,6 +28,7 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
 
     private static final String SQL_SELECT_BELICASH_BY_ID = "SELECT beli_cash207225.*, "
             + "pegawai207225.id207225 as id_pegawai207225,pembeli207225.id207225 as id_pembeli207225,mobil207225.id207225 as id_mobil207225,"
+            + "pegawai207225.nik207225 as nik_pegawai207225,pembeli207225.nik207225 as nik_pembeli207225,"
             + "pegawai207225.*,pembeli207225.*,mobil207225.* "
             + "FROM beli_cash207225 LEFT JOIN pegawai207225 "
             + "ON pegawai207225.id207225 = beli_cash207225.idPegawai207225 "
@@ -30,7 +37,7 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
             + "WHERE beli_cash207225.id207225 =?";
     private static final String SQL_SELECT_BELICASH_ALL = "SELECT beli_cash207225.*, "
             + "pegawai207225.id207225 as id_pegawai207225,pembeli207225.id207225 as id_pembeli207225,mobil207225.id207225 as id_mobil207225,"
-            + "pegawai207225.nik207225 as nik_pegawai207225,pembeli207225.nik207225 as nik_pegawai207225,"
+            + "pegawai207225.nik207225 as nik_pegawai207225,pembeli207225.nik207225 as nik_pembeli207225,"
             + "pegawai207225.*,pembeli207225.*,mobil207225.* "
             + "FROM beli_cash207225 LEFT JOIN pegawai207225 "
             + "ON pegawai207225.id207225 = beli_cash207225.idPegawai207225 "
@@ -38,6 +45,9 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
             + "LEFT JOIN mobil207225 ON mobil207225.id207225 = beli_cash207225.idMobil207225";
     private static final String SQL_COUNT_BELICASH = "SELECT COUNT(*) FROM beli_cash207225";
     private static final String SQL_INSERT_BELICASH = "INSERT INTO beli_cash207225 (cashTgl207225, cashBayar207225, idPegawai207225, idPembeli207225, idMobil207225) VALUES (?,?,?,?,?) ";
+    //                    Translate date
+    private static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+//                  
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -52,8 +62,9 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
                     Pegawai207225 pegawai = new Pegawai207225();
                     Pembeli207225 Pembeli = new Pembeli207225();
                     Mobil207225 mobil = new Mobil207225();
+
                     beliCash207225.setId207225(rs.getInt("id207225"));
-                    beliCash207225.setCashTgl207225(rs.getString("cashTgl207225"));
+                    beliCash207225.setCashTgl207225(dateFormat.format(rs.getTimestamp("cashTgl207225")));
                     beliCash207225.setCashBayar2072225(rs.getInt("cashBayar207225"));
 
                     pegawai.setId207225(rs.getInt("id_pegawai207225"));
@@ -69,7 +80,7 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
                     Pembeli.setAlamatPembeli207225(rs.getString("alamatPembeli207225"));
                     Pembeli.setTelpPembeli207225(rs.getString("telpPembeli207225"));
                     beliCash207225.setPembeli207225(Pembeli);
-                    
+
                     mobil.setId207225(rs.getInt("id_mobil207225"));
                     mobil.setNamaMobil207225(rs.getString("namaMobil207225"));
                     mobil.setMerk207225(rs.getString("merk207225"));
@@ -99,7 +110,7 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
                     Pembeli207225 Pembeli = new Pembeli207225();
                     Mobil207225 mobil = new Mobil207225();
                     beliCash207225.setId207225(rs.getInt("id207225"));
-                    beliCash207225.setCashTgl207225(rs.getString("cashTgl207225"));
+                    beliCash207225.setCashTgl207225(dateFormat.format(rs.getTimestamp("cashTgl207225")));
                     beliCash207225.setCashBayar2072225(rs.getInt("cashBayar207225"));
 
                     pegawai.setId207225(rs.getInt("id_pegawai207225"));
@@ -115,7 +126,7 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
                     Pembeli.setAlamatPembeli207225(rs.getString("alamatPembeli207225"));
                     Pembeli.setTelpPembeli207225(rs.getString("telpPembeli207225"));
                     beliCash207225.setPembeli207225(Pembeli);
-                    
+
                     mobil.setId207225(rs.getInt("id_mobil207225"));
                     mobil.setNamaMobil207225(rs.getString("namaMobil207225"));
                     mobil.setMerk207225(rs.getString("merk207225"));
@@ -136,10 +147,10 @@ public class BeliCashDaoImpl207225 implements BeliCashDao207225 {
 
     @Override
     public void insert(BeliCash207225 beliCash207225) {
-         try {
-            
-            jdbcTemplate.update(SQL_INSERT_BELICASH, new Object[]{beliCash207225.getCashTgl207225(), beliCash207225.getCashBayar2072225(), 
-                beliCash207225.getPegawai207225().getId207225(),beliCash207225.getPembeli207225().getId207225(),beliCash207225.getMobil207225().getId207225()});
+        try {
+
+            jdbcTemplate.update(SQL_INSERT_BELICASH, new Object[]{beliCash207225.getCashTgl207225(), beliCash207225.getCashBayar2072225(),
+                beliCash207225.getPegawai207225().getId207225(), beliCash207225.getPembeli207225().getId207225(), beliCash207225.getMobil207225().getId207225()});
         } catch (Exception e) {
             e.printStackTrace();
         }
