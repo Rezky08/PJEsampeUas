@@ -96,7 +96,6 @@ public class BeliCashController207225 {
             Date date = new Date();
             //            
             beliCash207225.setCashTgl207225(dateFormat.format(date));
-            beliCash207225.setCashBayar2072225((int) belicashMap.get("cashBayar207225"));
             pegawai207225.setId207225((int) belicashMap.get("idPegawai207225"));
             pembeli207225.setId207225((int) belicashMap.get("idPembeli207225"));
             mobil207225.setId207225((int) belicashMap.get("idMobil207225"));
@@ -120,7 +119,9 @@ public class BeliCashController207225 {
                 respone.put(Constants.STATUS, "Mobil Id not Found");
                 return respone;
             }
-
+            
+            mobil207225 = mobilService207225.getById(mobilId);
+            beliCash207225.setCashBayar2072225(mobil207225.getHarga207225());
             beliCashService207225.insert(beliCash207225);
             respone.put(Constants.STATUS, Constants.OK);
 
